@@ -45,4 +45,4 @@ data = {
     'solvers': list(solvers.keys()),
     'matrices': matrix_files
 }
-plot_results(data)
+#plot_results(data)
