@@ -1,4 +1,4 @@
-# Progetto 1 - Metodi Del Calcolo Scientifico - Unimib
+# Progetto 1 - Metodi Del Calcolo Scientifico - UniMiB
 ### **Mini Libreria per Sistemi Lineari**  
 
 Il progetto richiede l'implementazione di una mini libreria per la risoluzione di sistemi lineari utilizzando metodi iterativi per matrici **simmetriche e definite positive**.  
