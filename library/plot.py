@@ -29,5 +29,8 @@ def plot_results(data):
             plt.legend()
             plt.grid(True, which='both', ls='--', lw=0.5)
             plt.tight_layout()
-            plt.savefig(f"plots/{matrix}_{metric}.png")
+            matrix_dir = f"plots/{matrix}"
+            os.makedirs(matrix_dir, exist_ok=True)
+            plt.savefig(f"{matrix_dir}/{metric}.png")
+            plt.show()
             plt.close()
