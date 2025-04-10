@@ -1,11 +1,17 @@
 import matplotlib.pyplot as plt
 import os
+from datetime import datetime
 
 def plot_results(data):
-    os.makedirs("plots", exist_ok=True)
+    now = datetime.now().strftime("%Y%m%d_%H%M%S")
+    base_dir = os.path.join("plots", now)
+    os.makedirs(base_dir, exist_ok=True)
 
     for matrix in data['matrices']:
         results = data['results'][matrix]
+        matrix_name = os.path.splitext(matrix)[0]
+        matrix_dir = os.path.join(base_dir, matrix_name)
+        os.makedirs(matrix_dir, exist_ok=True)
 
         for metric_idx, metric in enumerate(['iters', 'error']):
             plt.figure(figsize=(8, 6))
@@ -25,12 +31,10 @@ def plot_results(data):
                 plt.ylabel('Errore Relativo')
 
             plt.xlabel('Tolleranza')
-            plt.title(f"{matrix} - {metric.title()}")
+            plt.title(f"{matrix_name} - {metric.title()}")
             plt.legend()
             plt.grid(True, which='both', ls='--', lw=0.5)
             plt.tight_layout()
-            matrix_dir = f"plots/{matrix}"
-            os.makedirs(matrix_dir, exist_ok=True)
-            plt.savefig(f"{matrix_dir}/{metric}.png")
+            plt.savefig(os.path.join(matrix_dir, f"{metric}.png"))
             plt.show()
             plt.close()

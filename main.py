@@ -7,7 +7,7 @@ from library.gradient_method import gradient
 from library.conjugate_gradient_method import conjugate_gradient
 from library.plot import plot_results
 
-matrix_files = ["spa1.mtx", "vem1.mtx", "vem2.mtx"] #["spa1.mtx", "spa2.mtx", "vem1.mtx", "vem2.mtx"]
+matrix_files = ["spa1.mtx","spa2.mtx", "vem1.mtx", "vem2.mtx"] #["spa2.mtx"] ["spa1.mtx", "spa2.mtx", "vem1.mtx", "vem2.mtx"]
 tols = [1e-4, 1e-6, 1e-8, 1e-10]
 solvers = {
     "Jacobi": jacobi,
