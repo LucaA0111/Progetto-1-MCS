@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import os
 from datetime import datetime
 
+#TODO grafico tempo-tolleranza
 def plot_results(data):
     now = datetime.now().strftime("%Y%m%d_%H%M%S")
     base_dir = os.path.join("plots", now)
